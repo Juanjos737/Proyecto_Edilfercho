@@ -2,14 +2,10 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro de Contacto – Edilfercho</title>
-    <meta name="description" content="Formulario de registro de contacto para el proyecto Edilfercho." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Contacto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *,
         *::before,
@@ -19,24 +15,9 @@
             padding: 0;
         }
 
-        :root {
-            --bg: #0d0f14;
-            --surface: #161a23;
-            --border: #252b38;
-            --accent: #6c63ff;
-            --accent-2: #48cfad;
-            --text: #e8eaf0;
-            --muted: #7a8099;
-            --error: #ff6b6b;
-            --success: #48cfad;
-            --radius: 14px;
-            --transition: .25s ease;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            background: #0d0f14;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -48,13 +29,13 @@
         }
 
         .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: #161a23;
+            border: 1px solid #252b38;
             border-radius: 24px;
-            padding: 48px 44px;
+            padding: 48px 40px;
             width: 100%;
-            max-width: 480px;
-            box-shadow: 0 24px 64px rgba(0, 0, 0, .45);
+            max-width: 460px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, .5);
             position: relative;
             overflow: hidden;
         }
@@ -66,224 +47,139 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            background: linear-gradient(90deg, #6c63ff, #48cfad);
         }
 
         .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            display: inline-block;
             background: rgba(108, 99, 255, .15);
             border: 1px solid rgba(108, 99, 255, .3);
-            color: var(--accent);
-            font-size: 12px;
+            color: #6c63ff;
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: .05em;
+            letter-spacing: .08em;
             text-transform: uppercase;
             padding: 4px 12px;
             border-radius: 999px;
-            margin-bottom: 20px;
-        }
-
-        .badge span {
-            font-size: 10px;
+            margin-bottom: 18px;
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, var(--text) 60%, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #e8eaf0;
+            margin-bottom: 6px;
         }
 
         .subtitle {
-            color: var(--muted);
+            color: #7a8099;
             font-size: 14px;
-            margin-bottom: 36px;
+            margin-bottom: 32px;
         }
 
         .field {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         label {
             display: block;
             font-size: 13px;
             font-weight: 500;
-            color: var(--muted);
-            margin-bottom: 8px;
-            letter-spacing: .02em;
+            color: #7a8099;
+            margin-bottom: 7px;
         }
 
-        .input-wrap {
-            position: relative;
-        }
-
-        .input-wrap svg {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--muted);
-            width: 18px;
-            height: 18px;
-            pointer-events: none;
-            transition: color var(--transition);
-        }
-
-        input {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
             width: 100%;
             background: rgba(255, 255, 255, .04);
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius);
-            padding: 13px 16px 13px 44px;
+            border: 1.5px solid #252b38;
+            border-radius: 12px;
+            padding: 13px 16px;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
-            color: var(--text);
+            color: #e8eaf0;
             outline: none;
-            transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+            transition: border-color .2s, box-shadow .2s;
         }
 
-        input::placeholder {
-            color: var(--muted);
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="tel"]::placeholder {
+            color: #4a5066;
         }
 
-        input:focus {
-            border-color: var(--accent);
-            background: rgba(108, 99, 255, .06);
-            box-shadow: 0 0 0 4px rgba(108, 99, 255, .12);
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus {
+            border-color: #6c63ff;
+            box-shadow: 0 0 0 4px rgba(108, 99, 255, .15);
         }
 
-        input:focus+svg,
-        .input-wrap:focus-within svg {
-            color: var(--accent);
-        }
-
-        /* icon inside wrap needs different selector */
-        .input-wrap:focus-within svg {
-            color: var(--accent);
-        }
-
-        .btn {
+        button[type="submit"] {
             width: 100%;
-            margin-top: 12px;
-            padding: 15px;
+            margin-top: 8px;
+            padding: 14px;
             border: none;
-            border-radius: var(--radius);
-            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 12px;
+            background: linear-gradient(135deg, #6c63ff, #8b5cf6);
             color: #fff;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
-            letter-spacing: .02em;
-            transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
-            position: relative;
-            overflow: hidden;
+            transition: opacity .2s, transform .15s, box-shadow .2s;
         }
 
-        .btn:hover:not(:disabled) {
-            opacity: .9;
+        button[type="submit"]:hover {
+            opacity: .88;
             transform: translateY(-1px);
             box-shadow: 0 8px 24px rgba(108, 99, 255, .35);
         }
 
-        .btn:active:not(:disabled) {
+        button[type="submit"]:active {
             transform: translateY(0);
         }
 
-        .btn:disabled {
-            opacity: .6;
+        button[type="submit"]:disabled {
+            opacity: .55;
             cursor: not-allowed;
         }
 
-        .btn .spinner {
-            display: none;
-            width: 18px;
-            height: 18px;
-            border: 2.5px solid rgba(255, 255, 255, .4);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin .7s linear infinite;
-            margin: 0 auto;
-        }
-
-        .btn.loading .btn-text {
-            display: none;
-        }
-
-        .btn.loading .spinner {
-            display: block;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
         .toast {
-            display: none;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 14px 16px;
-            border-radius: var(--radius);
+            margin-top: 16px;
+            padding: 13px 16px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: 500;
-            animation: slideUp .3s ease;
+            display: none;
         }
 
-        .toast.success {
-            display: flex;
+        .toast.ok {
+            display: block;
             background: rgba(72, 207, 173, .12);
             border: 1px solid rgba(72, 207, 173, .3);
-            color: var(--success);
+            color: #48cfad;
         }
 
-        .toast.error {
-            display: flex;
-            background: rgba(255, 107, 107, .1);
+        .toast.err {
+            display: block;
+            background: rgba(255, 107, 107, .10);
             border: 1px solid rgba(255, 107, 107, .3);
-            color: var(--error);
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            color: #ff6b6b;
         }
 
         .footer-note {
             text-align: center;
-            color: var(--muted);
+            color: #4a5066;
             font-size: 12px;
-            margin-top: 28px;
+            margin-top: 24px;
         }
 
         .footer-note a {
-            color: var(--accent);
+            color: #6c63ff;
             text-decoration: none;
-        }
-
-        @media (max-width: 520px) {
-            .card {
-                padding: 36px 24px;
-            }
-
-            h1 {
-                font-size: 22px;
-            }
         }
     </style>
 </head>
@@ -291,133 +187,87 @@
 <body>
 
     <div class="card">
-        <div class="badge"><span>✦</span> Proyecto Edilfercho</div>
+        <div class="badge">Proyecto Edilfercho</div>
         <h1>Registro de Contacto</h1>
-        <p class="subtitle">Completa el formulario y guardaremos tu información de forma segura.</p>
+        <p class="subtitle">Completa el formulario — tus datos se guardan en Supabase.</p>
 
-        <form id="contactForm" novalidate>
-
-            <!-- Nombre -->
+        <form id="frm">
             <div class="field">
                 <label for="nombre">Nombre completo</label>
-                <div class="input-wrap">
-                    <input type="text" id="nombre" name="nombre" placeholder="Juan García" autocomplete="name"
-                        required />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="1.8">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                    </svg>
-                </div>
+                <input type="text" id="nombre" placeholder="Juan Garcia" autocomplete="name">
             </div>
-
-            <!-- Email -->
             <div class="field">
-                <label for="email">Correo electrónico</label>
-                <div class="input-wrap">
-                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" autocomplete="email"
-                        required />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="1.8">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                    </svg>
-                </div>
+                <label for="email">Correo electronico</label>
+                <input type="email" id="email" placeholder="correo@ejemplo.com" autocomplete="email">
             </div>
-
-            <!-- Teléfono -->
             <div class="field">
-                <label for="telefono">Teléfono</label>
-                <div class="input-wrap">
-                    <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567" autocomplete="tel"
-                        required />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="1.8">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                    </svg>
-                </div>
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" placeholder="+57 300 123 4567" autocomplete="tel">
             </div>
-
-            <button type="submit" class="btn" id="submitBtn">
-                <span class="btn-text">Enviar registro</span>
-                <div class="spinner"></div>
-            </button>
-
-            <div class="toast" id="toast" role="alert"></div>
+            <button type="submit" id="btn">Enviar registro</button>
+            <div class="toast" id="msg"></div>
         </form>
 
-        <p class="footer-note">Tus datos se almacenan de forma segura en <a href="https://supabase.com"
-                target="_blank">Supabase</a>.</p>
+        <p class="footer-note">Datos guardados en <a href="https://supabase.com" target="_blank">Supabase</a></p>
     </div>
 
     <script>
-        // ── Configuración Supabase ─────────────────
-        const SUPABASE_URL = 'https://zqwnacdilpapeynmxivw.supabase.co';
-        const SUPABASE_KEY = 'sb_publishable_LC-_0zJ2XU7UkithLa_t6g_CtlUqQvq';
+        var URL_SB = 'https://zqwnacdilpapeynmxivw.supabase.co';
+        var KEY_SB = 'sb_publishable_LC-_0zJ2XU7UkithLa_t6g_CtlUqQvq';
 
-        // ── Elementos del DOM ──────────────────────
-        const form = document.getElementById('contactForm');
-        const btn = document.getElementById('submitBtn');
-        const toast = document.getElementById('toast');
+        var frm = document.getElementById('frm');
+        var btn = document.getElementById('btn');
+        var msg = document.getElementById('msg');
 
-        // ── Mostrar mensaje ────────────────────────
-        function showToast(type, msg) {
-            toast.className = `toast ${type}`;
-            toast.innerHTML = type === 'success'
-                ? `<span>✅</span> ${msg}`
-                : `<span>❌</span> ${msg}`;
-            setTimeout(() => { toast.className = 'toast'; }, 5000);
+        function toast(type, text) {
+            msg.className = 'toast ' + type;
+            msg.textContent = text;
         }
 
-        // ── Envío via REST API (sin CDN) ───────────
-        form.addEventListener('submit', async (e) => {
+        frm.onsubmit = function (e) {
             e.preventDefault();
 
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
+            var nombre = document.getElementById('nombre').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var telefono = document.getElementById('telefono').value.trim();
 
-            // Validación básica
             if (!nombre || !email || !telefono) {
-                showToast('error', 'Por favor completa todos los campos.');
-                return;
-            }
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                showToast('error', 'Ingresa un correo electrónico válido.');
+                toast('err', 'Completa todos los campos.');
                 return;
             }
 
             btn.disabled = true;
-            btn.classList.add('loading');
+            btn.textContent = 'Enviando...';
+            msg.className = 'toast';
 
-            try {
-                const res = await fetch(`${SUPABASE_URL}/rest/v1/contactos`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'apikey': SUPABASE_KEY,
-                        'Authorization': `Bearer ${SUPABASE_KEY}`,
-                        'Prefer': 'return=minimal'
-                    },
-                    body: JSON.stringify({ nombre, email, telefono })
+            fetch(URL_SB + '/rest/v1/contactos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': KEY_SB,
+                    'Authorization': 'Bearer ' + KEY_SB,
+                    'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({ nombre: nombre, email: email, telefono: telefono })
+            })
+                .then(function (res) {
+                    if (res.ok) {
+                        toast('ok', 'Registro enviado con exito!');
+                        frm.reset();
+                    } else {
+                        return res.text().then(function (t) {
+                            toast('err', 'Error ' + res.status + ': ' + t);
+                        });
+                    }
+                })
+                .catch(function (err) {
+                    toast('err', 'Error de red: ' + err.message);
+                })
+                .finally(function () {
+                    btn.disabled = false;
+                    btn.textContent = 'Enviar registro';
                 });
-
-                if (!res.ok) {
-                    const errData = await res.json().catch(() => ({}));
-                    throw new Error(errData.message || `Error HTTP ${res.status}`);
-                }
-
-                showToast('success', '¡Registro enviado con éxito!');
-                form.reset();
-            } catch (err) {
-                console.error(err);
-                showToast('error', `Error: ${err.message}`);
-            } finally {
-                btn.disabled = false;
-                btn.classList.remove('loading');
-            }
-        });
+        };
     </script>
 
 </body>
